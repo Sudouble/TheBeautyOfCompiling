@@ -151,7 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="TokenReader1.cpp" />
     <ClCompile Include="w2_re_and_dfa.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TokenReader1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

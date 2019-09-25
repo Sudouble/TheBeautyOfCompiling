@@ -1,5 +1,7 @@
-# Prerequisites
+*.sdf
 .vs
+ipch
+# Prerequisites
 *.opendb
 *.d
 *.opensdf

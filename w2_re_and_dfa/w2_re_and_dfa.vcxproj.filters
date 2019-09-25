@@ -18,5 +18,13 @@
     <ClCompile Include="w2_re_and_dfa.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="TokenReader1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TokenReader1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
