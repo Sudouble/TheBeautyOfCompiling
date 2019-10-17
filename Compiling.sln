@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Compiling", "Compiling\Comp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "w2_re_and_dfa", "w2_re_and_dfa\w2_re_and_dfa.vcxproj", "{E76101EA-F816-4FE7-85D2-F4B607CDD462}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "w3_basic_formula_calc", "w3_basic_formula_calc\w3_basic_formula_calc.vcxproj", "{844FB9D0-AD49-4A01-A4DE-4616E3CF0FD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{E76101EA-F816-4FE7-85D2-F4B607CDD462}.Release|x64.Build.0 = Release|x64
 		{E76101EA-F816-4FE7-85D2-F4B607CDD462}.Release|x86.ActiveCfg = Release|Win32
 		{E76101EA-F816-4FE7-85D2-F4B607CDD462}.Release|x86.Build.0 = Release|Win32
+		{844FB9D0-AD49-4A01-A4DE-4616E3CF0FD3}.Debug|x64.ActiveCfg = Debug|x64
+		{844FB9D0-AD49-4A01-A4DE-4616E3CF0FD3}.Debug|x64.Build.0 = Debug|x64
+		{844FB9D0-AD49-4A01-A4DE-4616E3CF0FD3}.Debug|x86.ActiveCfg = Debug|Win32
+		{844FB9D0-AD49-4A01-A4DE-4616E3CF0FD3}.Debug|x86.Build.0 = Debug|Win32
+		{844FB9D0-AD49-4A01-A4DE-4616E3CF0FD3}.Release|x64.ActiveCfg = Release|x64
+		{844FB9D0-AD49-4A01-A4DE-4616E3CF0FD3}.Release|x64.Build.0 = Release|x64
+		{844FB9D0-AD49-4A01-A4DE-4616E3CF0FD3}.Release|x86.ActiveCfg = Release|Win32
+		{844FB9D0-AD49-4A01-A4DE-4616E3CF0FD3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
