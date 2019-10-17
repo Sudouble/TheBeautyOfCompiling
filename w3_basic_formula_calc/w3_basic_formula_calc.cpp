@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include "TokenReader1.h"
+#include "SimpleLexer.h"
 using namespace std;
 
 typedef struct {
@@ -17,5 +18,13 @@ int main()
 {
     std::cout << "Program Calculator!\n";
 
+	string str2 = "2+3*5+3";
 
+	TokenReader reader(str2);
+	reader.Print();
+
+	SimpleLexer lexer;
+	
+	ASTNode* node = lexer.additive(reader);
+	dumpTree(node, "\t");
 }

@@ -21,9 +21,21 @@
     <ClCompile Include="TokenReader1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ASTTress.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleLexer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TokenReader1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ASTTress.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleLexer.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -151,10 +151,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ASTTress.cpp" />
+    <ClCompile Include="SimpleLexer.cpp" />
     <ClCompile Include="TokenReader1.cpp" />
     <ClCompile Include="w3_basic_formula_calc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ASTTress.h" />
+    <ClInclude Include="SimpleLexer.h" />
     <ClInclude Include="TokenReader1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -49,22 +49,9 @@ void TokenReader::UpdateToken(STATE& lastState, char ch)
 			lastState = InitToken(ch);
 		break;
 	case ADD:
-		if (ch == '+')
-		{
-			token.text += ch;
-			token.state = ADD;
-		}
-		else
-			lastState = InitToken(ch);
-		break;
+	case MINUS:
 	case MULTI:
-		if (ch == '*')
-		{
-			token.text += ch;
-			token.state = MULTI;
-		}
-		else
-			lastState = InitToken(ch);
+		lastState = InitToken(ch);
 		break;
 	case GT:
 		if (ch == '=')
@@ -105,6 +92,21 @@ inline STATE TokenReader::InitToken(char ch)
 		token.state = DIGIT;
 		token.text += ch;
 	}
+	else if (ch == '+')
+	{
+		token.state = ADD;
+		token.text += ch;
+	}
+	else if (ch == '-')
+	{
+		token.state = MINUS;
+		token.text += ch;
+	}
+	else if (ch == '*')
+	{
+		token.state = MULTI;
+		token.text += ch;
+	}
 	else if (ch == '>')
 	{
 		token.state = GT;
@@ -126,17 +128,28 @@ void TokenReader::Print()
 	}
 }
 
-TOKEN peek() // next unit // with backup
+TOKEN TokenReader::peek() // next unit // with backup
 {
-
+	if (currentPos < vecResult.size())
+		return vecResult[currentPos];
+	return TOKEN();
 }
 
-TOKEN read() // next unit
+TOKEN TokenReader::read() // next unit
 {
-	
+	if (currentPos < vecResult.size())
+		return vecResult[currentPos++];
+	return TOKEN();
 }
 
-TOKEN TokenReader::GetCurrentToken()
+void TokenReader::unread()
 {
-	return token;
+	if (currentPos > 0)
+		currentPos--;
 }
+
+int TokenReader::GetCurrentToken()
+{
+	return currentPos;
+}
+

@@ -15,6 +15,7 @@ enum STATE
 	GT_THAN,
 	EQUAL,
 	ADD,
+	MINUS,
 	MULTI,
 };
 
@@ -30,12 +31,16 @@ public:
 	~TokenReader() {}
 	void Print();
 
+	TOKEN read(); // next unit
+	TOKEN peek();
+	void unread();
+	int GetCurrentToken();
+
 private:
 	void parse();
 	void UpdateToken(STATE& lastState, char ch);
 	STATE InitToken(char ch);	
-
-	TOKEN GetCurrentToken();
+	
 
 private:
 	string str;
