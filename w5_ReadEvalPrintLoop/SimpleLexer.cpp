@@ -10,6 +10,11 @@ ASTNode* SimpleLexer::prog(TokenReader& reader)
 
 		if (child == NULL)
 		{
+			child = assignment(reader);
+		}
+
+		if (child == NULL)
+		{
 			child = additive(reader);
 		}
 
@@ -21,6 +26,52 @@ ASTNode* SimpleLexer::prog(TokenReader& reader)
 			throw ("unknown statement");
 		}
 	}
+	return node;
+}
+
+ASTNode* SimpleLexer::assignment(TokenReader& reader)
+{
+	ASTNode* node = NULL;
+
+	TOKEN token = reader.peek();
+	if (token.state == Identify)
+	{
+		token = reader.read();		
+
+		token = reader.peek();
+		if (token.state == EQUAL)
+		{
+			node = new ASTNode(token.text, AssignmentStmt);
+
+			token = reader.read();
+
+			ASTNode* child = additive(reader);
+			if (child == NULL)
+			{
+				throw "invalide assignment statement, expecting an expression";
+			}
+			else
+			{
+				node->addChild(child);
+
+				// ·ÖºÅµÄÔ¤¶ÁÈ¡
+				token = reader.peek();
+				if (token.state == SemiColon)
+				{
+					token = reader.read();
+				}
+				else
+				{
+					throw "invalid statement, expecting semicolon";
+				}
+			}
+		}
+		else
+		{
+			reader.unread();
+		}
+	}
+
 	return node;
 }
 
@@ -93,7 +144,7 @@ ASTNode* SimpleLexer::additive(TokenReader& reader)
 	while (true)
 	{
 		TOKEN token = reader.peek();
-		if (token.state == ADD)
+		if (token.state == ADD || token.state == MINUS)
 		{
 			token = reader.read();
 

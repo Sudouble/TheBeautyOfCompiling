@@ -64,9 +64,15 @@ int evaluate(ASTNode* node)
 	{
 	case Program:
 		return evaluate(vecNode[0]);
+	case AssignmentStmt:
+		if (name2Value.find(node->GetText()) == name2Value.end())
+		{
+			throw "key not found.";
+		}
 	case IntDeclaration:
 	{
-		name2Value[node->GetText()] = evaluate(vecNode[0]);
+		if (vecNode.size() > 0)
+			name2Value[node->GetText()] = evaluate(vecNode[0]);
 		return name2Value[node->GetText()];
 	}
 	case Identifier:
@@ -83,7 +89,10 @@ int evaluate(ASTNode* node)
 	case Additive:
 	{
 		if (vecNode.size() == 2)
-			return evaluate(vecNode[0]) + evaluate(vecNode[1]);
+			if (node->txt == "+")
+				return evaluate(vecNode[0]) + evaluate(vecNode[1]);
+			else if (node->txt == "-")
+				return evaluate(vecNode[0]) - evaluate(vecNode[1]);
 		else
 			throw "tree not with size 2";
 	}

@@ -8,6 +8,7 @@ class SimpleLexer
 public:
 	ASTNode* prog(TokenReader& reader);
 
+	ASTNode* assignment(TokenReader& reader);
 	ASTNode* intDeclararion(TokenReader &reader);
 	
 	ASTNode* additive(TokenReader& reader);
