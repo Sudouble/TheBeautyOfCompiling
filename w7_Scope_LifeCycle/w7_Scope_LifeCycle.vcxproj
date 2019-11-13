@@ -91,10 +91,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\Project\vs2010\TheBeautyOfCompiling\antlr4.7.2-runtime;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\Project\vs2010\TheBeautyOfCompiling\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -151,7 +153,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ASTTress.cpp" />
+    <ClCompile Include="Scope.cpp" />
+    <ClCompile Include="SimpleLexer.cpp" />
+    <ClCompile Include="Symbol.cpp" />
+    <ClCompile Include="TokenReader1.cpp" />
     <ClCompile Include="w7_Scope_LifeCycle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ASTTress.h" />
+    <ClInclude Include="Scope.h" />
+    <ClInclude Include="SimpleLexer.h" />
+    <ClInclude Include="Symbol.h" />
+    <ClInclude Include="TokenReader1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

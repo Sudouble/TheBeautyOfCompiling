@@ -40,3 +40,4 @@ ipch
 *.app
 
 Debug
+llvm-6.0.1.src

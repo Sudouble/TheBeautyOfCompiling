@@ -2,8 +2,9 @@
 //
 
 #include <iostream>
+#include "SimpleLexer.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	string strScript = "int age = 44; for(int i = 0;i<10;i++) { age = age + 2;} int i = 8;";
 }
